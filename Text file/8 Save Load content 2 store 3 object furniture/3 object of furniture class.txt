@@ -1,0 +1,70 @@
+Add webform  add listbox add 1button  add 2 label
+
+enable autopostback
+
+aspx.cs file:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace _3_object_of_furniture_class
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                Session["s1"] = new Furniture("chair1", "xyz1", "1554");
+                Session["s2"] = new Furniture("chair2", "xyz2", "1594");
+                Session["s3"] = new Furniture("chair3", "xyz3", "1557");
+
+                ListBox1.Items.Add(((Furniture)Session["s1"]).name);
+                ListBox1.Items.Add(((Furniture)Session["s2"]).name);
+                ListBox1.Items.Add(((Furniture)Session["s3"]).name);
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (ListBox1.SelectedIndex != -1)
+            {
+                if (ListBox1.SelectedIndex == 0)
+                {
+                    Label1.Text = ((Furniture)Session["s1"]).mani;
+                    Label2.Text = ((Furniture)Session["s1"]).cost;
+                }
+                else if(ListBox1.SelectedIndex == 1)
+                {
+                    Label1.Text = ((Furniture)Session["s2"]).mani;
+                    Label2.Text = ((Furniture)Session["s2"]).cost;
+                }
+                else if (ListBox1.SelectedIndex == 2)
+                {
+                    Label1.Text = ((Furniture)Session["s3"]).mani;
+                    Label2.Text = ((Furniture)Session["s3"]).cost;
+                }
+
+            }
+        }
+    }
+}
+class Furniture
+{
+    public string name;
+    public string mani;
+    public string cost;
+
+    public Furniture(string name, string mani, string cost)
+    {
+        this.name = name;
+        this.mani = mani;
+        this.cost = cost;
+
+    }
+
+}

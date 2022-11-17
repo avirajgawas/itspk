@@ -1,0 +1,55 @@
+Add webform and open view code paste code
+
+aspx.csFile:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace multiple_inheritance
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //Enginepart1 e1 = new Engine();
+            //Response.Write(e1.pipe());
+           // Enginepart2 e2 = new Engine();
+           // Response.Write(e2.Gear());
+
+            Engine en = new Engine();
+            Response.Write(en.Gear());
+            Response.Write(en.pipe());
+            
+        }
+    }
+}
+
+class Engine : Enginepart1, Enginepart2
+{
+    
+    public string pipe()
+    {
+        return "pipe";
+
+    }
+
+    public string Gear()
+    {
+        return "Gear";
+
+    }
+}
+
+    interface Enginepart1
+{
+    string pipe();
+}
+interface Enginepart2
+{
+    string Gear();
+}
+

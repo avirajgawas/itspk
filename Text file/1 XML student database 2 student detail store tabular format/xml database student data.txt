@@ -1,0 +1,51 @@
+Add xsl file.
+code of xsl file :-
+
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+		<html>
+		<head>
+		</head>
+			<body>
+				<table border="1">
+				<xsl:for-each select="students/student">
+					<tr>
+						<td>
+						<xsl:value-of select="sname"/>
+						</td>
+						<td>
+						<xsl:value-of select="rollno"/>
+						</td>
+					</tr>
+				</xsl:for-each>
+				</table>
+			</body>
+		</html>
+        
+    </xsl:template>
+</xsl:stylesheet>
+
+Add xml file:-
+
+Code:-
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="XSLTFile1.xsl" ?>
+<students>
+<student>
+	<rollno>1</rollno>
+	<sname>Aviraj</sname>
+</student>
+
+	
+<student>
+	<rollno>2</rollno>
+	<sname>Aniket</sname>
+</student>
+
+<student>
+	<rollno>3</rollno>
+	<sname>Gaurav</sname>
+</student>
+	
+</students>

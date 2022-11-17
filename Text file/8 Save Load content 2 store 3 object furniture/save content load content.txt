@@ -1,0 +1,39 @@
+ add webform add 2 text box  2 button
+
+aspx.cs:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace save_content_load_content
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ViewState["Data"] = TextBox1.Text;
+            
+            TextBox1.Text = "";
+
+            ViewState["Data1"] = TextBox2.Text;
+            TextBox1.Text = "";
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = ViewState["Data"].ToString();
+            TextBox2.Text = ViewState["Data1"].ToString();
+
+        }
+    }
+}

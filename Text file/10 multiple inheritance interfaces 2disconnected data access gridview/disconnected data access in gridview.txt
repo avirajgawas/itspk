@@ -1,0 +1,3 @@
+Add webform add gridview 1  add dataconnection  when choose datasource  setting in advanced insert update tik 
+
+enable editing  enable paging 

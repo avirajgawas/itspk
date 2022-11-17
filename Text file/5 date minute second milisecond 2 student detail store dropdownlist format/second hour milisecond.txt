@@ -1,0 +1,40 @@
+Add 1 button 
+
+Aspx.cs file:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace hour_minute_second_milisecond
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DateTime date = DateTime.Now;
+            Response.Write(date + "<br>");
+
+            Response.Write(date.Second + "<br>");
+            Response.Write(date.Minute + "<br>");
+            Response.Write(date.Hour + "<br>");
+            Response.Write(date.Millisecond + "<br>");
+            Response.Write(date.Date.Day + "<br>");
+            Response.Write(date.Date.Month + "<br>");
+            Response.Write(date.Date.Year + "<br>");
+            DateTime dt1 = new DateTime(2019, 09, 20);
+            DateTime dt2 = new DateTime(2000, 09, 20);
+            TimeSpan ts = dt1 - dt2;
+            Response.Write(Math.Round(ts.TotalDays / 365));
+
+        }
+    }
+}

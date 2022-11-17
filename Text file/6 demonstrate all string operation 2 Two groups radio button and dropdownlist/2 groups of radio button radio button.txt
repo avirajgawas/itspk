@@ -1,0 +1,37 @@
+Add webform
+
+add 3 radio button and name font name eg.arial ang grp name(g1) and autopostback true
+
+addd 3 radio button and type valuew 12,45.  autopostback true and grp name g2
+
+add label name heelo world
+
+aspx.cs file:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Two_group_of_radiobutton_dropdown_list
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Label1.Font.Name = ((RadioButton)sender).Text;
+        }
+
+        protected void fontchange(object sender, EventArgs e)
+        {
+            Label1.Font.Size = Convert.ToInt32(((RadioButton)sender).Text);
+        }
+    }
+}
